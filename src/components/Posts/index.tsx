@@ -15,15 +15,16 @@ interface Props {
 const PostList: React.FC<Props> = ({ posts }) => {
   return (
     <ul>
-      {posts.map((post, index) => (
-        <li key={index} className='mb-2'>
-          <PostCard
-            user={post.userId}
-            text={post.text}
-            createdAt={post.createdAt}
-          />
-        </li>
-      ))}
+      {posts &&
+        posts.map((post, index) => (
+          <li key={index} className='mb-2'>
+            <PostCard
+              user={post.userId}
+              text={post.text}
+              createdAt={post.createdAt}
+            />
+          </li>
+        ))}
     </ul>
   );
 };

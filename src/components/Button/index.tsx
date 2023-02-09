@@ -25,7 +25,7 @@ export const Button = ({
     case "add":
       return (
         <div className='fixed bottom-6 right-6'>
-          <CircularButton>
+          <CircularButton buttonClassName='bg-green-500 shadow-md'>
             <AddIcon />
           </CircularButton>
         </div>

@@ -2,12 +2,12 @@ const AddIcon = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='icon icon-tabler icon-tabler-plus'
+      class='icon icon-tabler icon-tabler-plus'
       width='36'
       height='36'
       viewBox='0 0 24 24'
       stroke-width='3'
-      stroke='#ffffff'
+      stroke='#FFF'
       fill='none'
       stroke-linecap='round'
       stroke-linejoin='round'>

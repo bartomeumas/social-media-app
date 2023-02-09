@@ -7,8 +7,9 @@ export default class PostApi {
     let result = { data: [], error: null };
     try {
       const response = await axios.get(apiUrl("/posts"));
+      console.log(response);
       if (response.status === 200) {
-        result.data = response.data.data;
+        result.data = response.data;
       } else {
         result.error = {};
       }

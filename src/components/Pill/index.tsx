@@ -10,6 +10,8 @@ interface Pill {
 
 export const Pill = ({ text, pillClassName, onClick }: Pill) => {
   return (
-    <Button buttonClassName={pillClassName} text={text} onClick={onClick} />
+    <Button buttonClassName={pillClassName} onClick={onClick}>
+      {text}
+    </Button>
   );
 };

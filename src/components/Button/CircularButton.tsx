@@ -1,3 +1,5 @@
+import classNames from "classnames";
+
 interface CircularButton {
   children: any;
   buttonClassName?: string;
@@ -10,7 +12,12 @@ const CircularButton = ({
   buttonClassName,
   onClick,
 }: CircularButton) => {
-  return <button className='bg-blue-500 p-2 rounded-full'>{children}</button>;
+  const circularButtonClasses = classNames(
+    "bg-blue-500 p-2 rounded-full",
+    buttonClassName
+  );
+
+  return <button className={circularButtonClasses}>{children}</button>;
 };
 
 export default CircularButton;

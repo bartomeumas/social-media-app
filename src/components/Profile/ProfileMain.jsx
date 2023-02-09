@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Button } from "../Button";
-import { Posts } from "../Posts";
+import PostList from "../Posts";
 import { FriendsList } from "../FriendsList";
 
 const ProfileMain = () => {
@@ -25,7 +25,7 @@ const ProfileMain = () => {
           Friends
         </Button>
       </div>
-      <div>{view == "Posts" ? <Posts /> : <FriendsList />}</div>
+      <div>{view == "Posts" ? <PostList /> : <FriendsList />}</div>
     </div>
   );
 };

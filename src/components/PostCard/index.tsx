@@ -27,24 +27,34 @@ export const PostCard = ({
   createdAt,
   comments,
 }: PostCard) => {
+  const followPillClass = "bg-white text-blue-600 w-[106px]";
+  const followingPillClass = "bg-green-500 text-white w-[106px]";
+
   const [pillText, setPillText] = useState("Follow");
+  const [pillClass, setPillClass] = useState(followPillClass);
+
   const handlePillButtonClick = () => {
     if (pillText === "Follow") {
       // handle request to follow, if request is successful set text to "following", otherwise leave it as it is
       setPillText("Following");
+      setPillClass(followingPillClass);
     } else {
       // handle request to unfollow, if request is successful set text to "follow", otherwise leave it as it is
       setPillText("Follow");
+      setPillClass(followPillClass);
     }
   };
 
   return (
     <div className='border-2-blue-500 p-3 rounded-lg bg-blue-500'>
-      <div className='flex justify-between'>
-        <div className='text-white text-md'>
-          <b>@{user}</b> - {formatDate(createdAt)}
-        </div>
-        <Pill text={pillText} onClick={handlePillButtonClick} />
+      <div className='flex justify-between text-white'>
+        <b>@{user}</b>
+        <p>{formatDate(createdAt)}</p>
+        {/* <Pill
+          text={pillText}
+          onClick={handlePillButtonClick}
+          pillClassName={pillClass}
+        /> */}
       </div>
       <div className='text-white'>{text}</div>
       <div className='flex justify-around'>
