@@ -6,9 +6,9 @@ import Posts from "../Posts";
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     postApi.getPosts().then(({ data, error }) => {
-      console.log(data);
       setPosts(data);
     });
   }, []);
@@ -16,7 +16,7 @@ export const Home = () => {
   return (
     <div className='container'>
       <Posts posts={posts} />
-      <Button type='add'></Button>
+      <Button type='add' onClick={() => {}}></Button>
     </div>
   );
 };

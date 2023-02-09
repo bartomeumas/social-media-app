@@ -17,7 +17,11 @@ const CircularButton = ({
     buttonClassName
   );
 
-  return <button className={circularButtonClasses}>{children}</button>;
+  return (
+    <button className={circularButtonClasses} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default CircularButton;
