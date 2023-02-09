@@ -4,13 +4,29 @@ import { Pill } from "../Pill";
 
 import { CommentIcon } from "@/resources/icons/components/CommentIcon";
 import { EditIcon } from "@/resources/icons/components/EditIcon";
+import { formatDate } from "@/utils";
+
+interface PostCard {
+  user: string;
+  isFollowing?: boolean;
+  text: string;
+  createdAt: string;
+  comments?: string[];
+}
 
 export const PostCard = ({
-  user = "bartomeumas00",
-  isFollowing = false,
-  postText = "Hoy fue un dia divertido",
-  comments = [],
-}) => {
+  //   user,
+  //   isFollowing = false,
+  //   text = "Hoy fue un dia divertido",
+  //   createdAt = "dd/mm/yyyy",
+  //   comments = [],
+  // }{
+  user,
+  isFollowing,
+  text,
+  createdAt,
+  comments,
+}: PostCard) => {
   const [pillText, setPillText] = useState("Follow");
   const handlePillButtonClick = () => {
     if (pillText === "Follow") {
@@ -25,10 +41,12 @@ export const PostCard = ({
   return (
     <div className='border-2-blue-500 p-3 rounded-lg bg-blue-500'>
       <div className='flex justify-between'>
-        <div className='text-white text-md font-bold'>@{user}</div>
+        <div className='text-white text-md'>
+          <b>@{user}</b> - {formatDate(createdAt)}
+        </div>
         <Pill text={pillText} onClick={handlePillButtonClick} />
       </div>
-      <div className='text-white'>{postText}</div>
+      <div className='text-white'>{text}</div>
       <div className='flex justify-around'>
         <CommentIcon />
         <EditIcon />
