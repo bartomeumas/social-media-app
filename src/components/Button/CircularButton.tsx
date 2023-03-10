@@ -3,7 +3,7 @@ import classNames from "classnames";
 interface CircularButton {
   children: any;
   buttonClassName?: string;
-  onClick?: () => {};
+  onClick?: () => void;
   type?: string;
 }
 

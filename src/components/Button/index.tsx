@@ -6,7 +6,7 @@ import AddIcon from "@/resources/icons/components/AddIcon";
 interface Button {
   children?: any;
   buttonClassName?: string;
-  onClick?: () => {};
+  onClick?: () => void;
   type?: string;
 }
 
@@ -17,7 +17,7 @@ export const Button = ({
   type,
 }: Button) => {
   const buttonClasses = classNames(
-    "bg-white h-7 px-4 text-md text-blue-600 border-solid border-blue-500 font-bold rounded-xl",
+    "bg-white h-7 px-4 text-md text-blue-600 border-solid border-blue-500 rounded-xl",
     buttonClassName
   );
 
