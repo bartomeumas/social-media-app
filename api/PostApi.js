@@ -19,4 +19,6 @@ export default class PostApi {
       return result;
     }
   }
+
+  async postPost() {}
 }

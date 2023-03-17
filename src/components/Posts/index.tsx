@@ -6,6 +6,8 @@ interface Post {
   text: string;
   createdAt: string;
   updatedAt?: string;
+  likes: number;
+  timesShared: number;
 }
 
 interface Props {
@@ -15,13 +17,15 @@ interface Props {
 const PostList: React.FC<Props> = ({ posts }) => {
   return (
     <ul>
-      {posts &&
+      {posts?.length > 0 &&
         posts.map((post, index) => (
-          <li key={index} className='mb-2'>
+          <li key={index} className='mb-4'>
             <PostCard
               user={post.userId}
               text={post.text}
               createdAt={post.createdAt}
+              likes={post.likes}
+              timesShared={post.timesShared}
             />
           </li>
         ))}

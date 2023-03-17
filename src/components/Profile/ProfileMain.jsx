@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Button } from "../Button";
 import PostList from "../Posts";
 import { FriendsList } from "../FriendsList";
+
+import { postApi } from "api";
+
+useEffect(() => {
+  postApi.getPosts();
+}, []);
 
 const ProfileMain = () => {
   const [view, setView] = useState("Posts");
