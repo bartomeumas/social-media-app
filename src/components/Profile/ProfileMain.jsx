@@ -6,12 +6,12 @@ import { FriendsList } from "../FriendsList";
 
 import { postApi } from "api";
 
-useEffect(() => {
-  postApi.getPosts();
-}, []);
-
 const ProfileMain = () => {
   const [view, setView] = useState("Posts");
+
+  useEffect(() => {
+    postApi.getPosts();
+  }, []);
 
   return (
     <div>

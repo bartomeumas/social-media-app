@@ -5,6 +5,7 @@ import { Button } from "../Button";
 import Input from "../Input";
 import Posts from "../Posts";
 import Modal from "../Modal";
+import ThreeDotsLoader from "../ThreeDotsLoader";
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -14,18 +15,16 @@ export const Home = () => {
 
   useEffect(() => {
     postApi.getPosts().then(({ data, error }) => {
+      console.log(data);
       setPosts(data);
     });
   }, []);
 
   return (
     <div className='container'>
-      <Posts posts={posts} />
-      <Button
-        type='add'
-        onClick={() => {
-          setIsModalOpen(true);
-        }}></Button>
+      <div>
+        {posts.length === 0 ? <ThreeDotsLoader /> : <Posts posts={posts} />}
+      </div>
       {isModalOpen && (
         <Modal setIsOpen={setIsModalOpen} title='Comentario'>
           <Input

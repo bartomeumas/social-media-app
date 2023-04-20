@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PostCard } from "../PostCard";
 
 interface Post {
-  userId: string;
+  email: string;
   text: string;
   createdAt: string;
   updatedAt?: string;
@@ -21,7 +21,7 @@ const PostList: React.FC<Props> = ({ posts }) => {
         posts.map((post, index) => (
           <li key={index} className='mb-4'>
             <PostCard
-              user={post.userId}
+              user={post.email}
               text={post.text}
               createdAt={post.createdAt}
               likes={post.likes}
